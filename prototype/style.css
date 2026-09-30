@@ -1,0 +1,47 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { margin: 0; padding: 0; overflow: hidden; display: flex; background: #1e293b; color: white; }
+#ui-panel { width: 350px; background: #0f172a; height: 100vh; padding: 20px; box-shadow: 5px 0 15px rgba(0,0,0,0.5); z-index: 10; overflow-y: auto; }
+#canvas-container { flex-grow: 1; height: 100vh; position: relative; cursor: grab; }
+#canvas-container:active { cursor: grabbing; }
+
+h2 { color: #38bdf8; margin-top: 0; margin-bottom: 5px; }
+h3, h4 { margin: 0; }
+h4 { color: #cbd5e1; margin-bottom: 5px; margin-top: 15px; border-bottom: 1px solid #334155; padding-bottom: 5px; font-size: 0.9em; text-transform: uppercase; }
+.subtitle { color: #94a3b8; font-size: 0.9em; margin-bottom: 25px; }
+
+.control-group { background: #1e293b; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #334155; }
+label { display: block; font-size: 0.85em; color: #cbd5e1; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+input[type="text"], select { width: 100%; padding: 10px; background: #0f172a; border: 1px solid #38bdf8; color: white; border-radius: 4px; font-weight: bold; }
+input[type="range"] { width: 100%; cursor: pointer; accent-color: #fb923c; }
+
+.floor-display { margin-top: 10px; font-weight: bold; color: #fb923c; text-align: center; font-size: 1.1em; }
+
+button { width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.3s; margin-top: 10px; }
+button:hover { background: #1d4ed8; }
+
+.btn-group { display: flex; gap: 10px; margin-top: 10px; }
+.btn-group button { margin-top: 0; padding: 10px 5px; font-size: 0.85em; }
+.success-btn { background: #059669; }
+.success-btn:hover { background: #047857; }
+.danger-btn { background: #dc2626; }
+.danger-btn:hover { background: #b91c1c; }
+
+.hidden { display: none; }
+
+#validation-box { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #eab308; margin-top: 15px; animation: fadeIn 0.5s ease-in-out; }
+#result-box { margin-top: 20px; background: #064e3b; padding: 15px; border-radius: 8px; border: 1px solid #34d399; text-align: center; animation: fadeIn 0.5s ease-in-out; }
+#result-box h3 { color: #34d399; margin-top: 0; font-size: 1.1em; margin-bottom: 10px; }
+
+.ulpin-code { font-family: monospace; font-size: 1.2em; background: #022c22; padding: 10px; border-radius: 4px; border: 1px dashed #34d399; word-break: break-all; margin: 0; }
+
+.evidence-box { text-align: left; font-size: 0.85em; color: #a7f3d0; margin-top: 10px; }
+.evidence-box p { margin: 5px 0; }
+
+#download-btn { background: #059669; margin-top: 15px; }
+#download-btn:hover { background: #047857; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,11 @@
+# Logs & temp files
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+
+# IDE / Editor config
+.vscode/
+.idea/
+.agents/

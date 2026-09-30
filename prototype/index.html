@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D V-ULPIN Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="ui-panel">
+        <h2>TerraNex 3D Cadastre</h2>
+        <p class="subtitle">AI-Powered Validation Platform</p>
+        
+        <div class="control-group">
+            <label>Parent Parcel (14-Digit ULPIN)</label>
+            <input type="text" id="base-ulpin" value="12345678901234" readonly>
+        </div>
+
+        <div class="control-group">
+            <label>Target Building Block</label>
+            <select id="block-select">
+                <option value="0A">Tower A</option>
+                <option value="0B">Tower B</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Building Slicer (Floor Level)</label>
+            <input type="range" id="floor-slider" min="1" max="5" value="1">
+            <div class="floor-display">Selected Floor: <span id="floor-number">1</span></div>
+        </div>
+        
+        <div class="control-group">
+            <label>Select Flat/Unit</label>
+            <select id="flat-select"></select>
+        </div>
+
+        <button id="validate-btn">Run AI Validation Engine</button>
+
+        <!-- Hidden until Validate is clicked -->
+        <div id="validation-box" class="hidden">
+            <h4>AI Validation Report</h4>
+            <div class="evidence-box">
+                <p>✓ Cadastral Map & Floor Plan match</p>
+                <p>✓ LiDAR Geometry Validated</p>
+                <p>✓ No Spatial Overlap Detected</p>
+                <p>✓ Floor & Area Match (118.4 m²)</p>
+            </div>
+            
+            <h4>Government Officer Review</h4>
+            <div class="btn-group">
+                <button id="approve-btn" class="success-btn">Approve & Generate</button>
+                <button id="reject-btn" class="danger-btn">Request Survey</button>
+            </div>
+        </div>
+        
+        <!-- Hidden until Approve is clicked -->
+        <div id="result-box" class="hidden">
+            <h3>STATUS: VERIFIED</h3>
+            <p id="final-ulpin" class="ulpin-code"></p>
+            <button id="download-btn" onclick="alert('Downloading Tamper-Proof 3D Certificate PDF...')">Download 3D Certificate</button>
+        </div>
+    </div>
+
+    <!-- 3D Canvas Container -->
+    <div id="canvas-container"></div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
